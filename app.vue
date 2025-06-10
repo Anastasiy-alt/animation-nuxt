@@ -44,6 +44,7 @@ onUnmounted(() => {
         rel="stylesheet">
   </head>
   <div class="page">
+    <div class="center"></div>
     <NuxtLink v-if="route.fullPath !== '/'" class="back-button custom-button"
               to="https://anastasiy-alt.github.io/animation-nuxt">Go back
     </NuxtLink>
@@ -72,7 +73,15 @@ p
 
 .page
   margin: 50px 100px
-
+.center
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: 20px
+  height: 20px
+  background: yellow
+  z-index: 100
 body
   background-color: #252423
 

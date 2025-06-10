@@ -56,7 +56,7 @@ onMounted(() => {
 
 </template>
 
-<style scoped lang="sass">
+<style lang="sass" scoped>
 .sticky-container
   align-items: flex-start
   height: 400vh

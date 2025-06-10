@@ -9,17 +9,18 @@
   <h2>The links show pages with usage examples.</h2>
   <ul>
     <li>
-      <NuxtLink class="link" to="https://anastasiy-alt.github.io/animation-nuxt/main">Main display</NuxtLink>
+      <NuxtLink class="link" to="/main">Main display</NuxtLink>
     </li>
     <li>
-      <NuxtLink class="link" to="https://anastasiy-alt.github.io/animation-nuxt/svg">Svg animations</NuxtLink>
+      <NuxtLink class="link" to="/svg">Svg animations</NuxtLink>
     </li>
     <li>
-      <NuxtLink class="link" to="https://anastasiy-alt.github.io/animation-nuxt/simple">Simple</NuxtLink>
+      <NuxtLink class="link" to="/simple">Simple</NuxtLink>
     </li>
     <li>
-      <NuxtLink class="link" to="https://anastasiy-alt.github.io/animation-nuxt/scroll">Scroll</NuxtLink>
+      <NuxtLink class="link" to="/scroll">Scroll</NuxtLink>
     </li>
+
 
   </ul>
 
