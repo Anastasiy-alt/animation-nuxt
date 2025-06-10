@@ -14,7 +14,9 @@ export default defineNuxtConfig({
     'nuxt-svgo',
     '@nuxtjs/color-mode'
   ],
-
+  app: {
+    baseURL: "/animation-nuxt/"
+  },
   svgo: {
     autoImportPath: './assets/icon/',
     componentPrefix: 'Icon',
