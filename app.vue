@@ -5,7 +5,7 @@ const route = useRoute();
 function goBack () {
   window.scrollTo({top: 0, behavior: 'smooth'});
   if (window?.history.state.back === null) {
-    router.push('/animation-nuxt/')
+    router.push('/')
   } else {
     window?.history.back()
   }
