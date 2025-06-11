@@ -9,7 +9,10 @@
   <h2>The links show pages with usage examples.</h2>
   <ul>
     <li>
-      <NuxtLink class="link" to="/main">Main display</NuxtLink>
+      <NuxtLink class="link" to="/main?type=one">Main display v1</NuxtLink>
+    </li>
+    <li>
+      <NuxtLink class="link" to="/main?type=two">Main display v2</NuxtLink>
     </li>
     <li>
       <NuxtLink class="link" to="/svg">Svg animations</NuxtLink>
@@ -20,13 +23,8 @@
     <li>
       <NuxtLink class="link" to="/scroll">Scroll</NuxtLink>
     </li>
-
-
   </ul>
 
-
-  <!--  <SvgRoad />-->
-  <!--  <SvgDraw />-->
 </template>
 
 <style lang="sass">

@@ -3,6 +3,8 @@ import {animate, createDraggable, createScope, onScroll, stagger, utils} from 'a
 
 onMounted(() => {
   utils.set('.square', {z: 100});
+  const tar = document.querySelector('.target')
+  const tarIcons = document.querySelector('.title_sub')
 
   createDraggable('.img_alien', {
     container: '.container',
@@ -31,20 +33,24 @@ onMounted(() => {
       par.style.transition = '1s all'
       par.style.transform = 'translate(0, 0)';
     });
+    window.addEventListener('scroll', () => {
+      par.style.transition = 'none'
+    })
   })
 
   utils.$('.img').forEach((icon, idx) => {
     animate(icon, {
-      y: `${utils.random(-150, 150)}px`,
-      x: `${utils.random(-150, 150)}px`,
+      y: `${utils.random(-250, 250, 20)}px`,
+      x: `${utils.random(-250, 250, 20)}px`,
       opacity: 0,
       duration: 500,
       alternate: true,
       ease: 'inOutQuad',
       autoplay: onScroll({
         sync: 0.5,
-        enter: `top+=${idx * 100} top`,
-        leave: `top+=${idx * 10} bottom`,
+        target: tarIcons,
+        // enter: `top-=0 top`,
+        // leave: `top+=0 bottom`,
         debug: false
       })
     });
@@ -57,7 +63,7 @@ onMounted(() => {
     ease: 'inOutQuad',
     autoplay: onScroll({
       sync: 0.5,
-      enter: 'top+=700 top',
+      enter: 'top+=500 top',
       leave: 'top-=0 bottom',
       debug: false
     })
@@ -104,91 +110,24 @@ onMounted(() => {
       debug: false
     })
   });
-
-  // animate('.scroll-block__inner', {
-  //   scale: 5,
-  //   opacity: 1,
-  //   duration: 1000,
-  //   alternate: true,
-  //   ease: 'inOutQuad',
-  //   autoplay: onScroll({
-  //     sync: 0.5,
-  //     enter: 'top+=200 top',
-  //     leave: 'top-=0 bottom',
-  //     debug: true
-  //   })
-  // });
-
-  createScope({
-    mediaQueries: { landscape: '(orientation: horizontal)' },
-    defaults: { ease: 'out(3)', duration: 500 },
-  }).add((scope) => {
-
-    let cardAnimation;
-
-    if (scope.matches.landscape) {
-      cardAnimation = animate('.scroll-block__inner', {
-        y: {
-          from: stagger(['20vh','-20vh'], {from: 'center'}),
-        },
-        x: ['0', stagger(['80%', '-80%'])],
-        delay: stagger(0, { from: 'first' }),
-      });
-    } else {
-      cardAnimation = animate('.scroll-block__inner', {
-        y: ['100vh', stagger(['-80%', '80%'])],
-        delay: stagger(100, { from: 'first' })
-      });
-    }
-
-    onScroll({
-      target: '.scroll-block',
-      enter: 'top',
-      leave: 'bottom',
-      debug: true,
-      sync: .5
-    }).link(cardAnimation)
-
-  });
-
-
-  createScope({
-    mediaQueries: { landscape: '(orientation: horizontal)' },
-    defaults: { ease: 'out(3)', duration: 500 },
-  }).add((scope) => {
-
-    let cardAnimation;
-
-    if (scope.matches.landscape) {
-      cardAnimation = animate('.card-freeze', {
-        y: {
-          from: stagger(['20vh','-20vh'], {from: 'center'}),
-        },
-        x: ['0', stagger(['80%', '-80%'])],
-        delay: stagger(0, { from: 'first' }),
-      });
-    } else {
-      cardAnimation = animate('.card-freeze', {
-        y: ['100vh', stagger(['-80%', '80%'])],
-        delay: stagger(100, { from: 'first' })
-      });
-    }
-
-    onScroll({
-      target: '.sticky-container',
-      enter: 'top',
-      leave: 'bottom',
-      debug: false,
-      sync: .5
-    }).link(cardAnimation)
-
+  animate('.scroll-block', {
+    y: '100px',
+    scale: 1.5,
+    opacity: 1,
+    duration: 1000,
+    alternate: true,
+    ease: 'inOutQuad',
+    autoplay: onScroll({
+      sync: 0.5,
+      target: tar,
+      debug: true
+    })
   });
 })
 
 </script>
 
 <template>
-
   <section class="container">
     <div class="title-block">
       <div class="title title_anim">awesome Journey Through Space</div>
@@ -211,43 +150,39 @@ onMounted(() => {
     <img alt="" class="img img_parallax img_dark-moon" src="~/assets/main/cosmos/dark-moon.png">
     <img alt="" class="img img_parallax img_stars" src="~/assets/main/cosmos/stars.png">
   </section>
+<div class="target"></div>
   <div class="scroll-block">
 
-    <div class="scroll-block__inner">
-      <img class="scroll-block__image" src="~/assets/main/photo.jpg" alt="">
-    </div>
-    <div class="scroll-block__inner">
-      <img class="scroll-block__image" src="~/assets/main/photo.jpg" alt="">
-    </div>
+<!--    <div class="scroll-block__inner">-->
+<!--      <img class="scroll-block__image" src="~/assets/main/photo.jpg" alt="">-->
+<!--    </div>-->
+<!--    <div class="scroll-block__inner">-->
+<!--      <img class="scroll-block__image" src="~/assets/main/photo.jpg" alt="">-->
+<!--    </div>-->
   </div>
-  <section class="sticky-container">
-    <div class="sticky-content">
-      <div class="stack">
-        <div class="card-freeze">1</div>
-        <div class="card-freeze">2</div>
-        <div class="card-freeze">3</div>
-        <div class="card-freeze">4</div>
-        <div class="card-freeze">5</div>
-      </div>
-    </div>
-  </section>
+
   <section class="next"></section>
 </template>
 
 <style lang="sass" scoped>
+//*
+//  outline: 1px solid yellow
+.target
+  height: 4px
+  width: 700px
+  background: #7cc56b
 .next
   height: 200vh
 .scroll-block
-  height: 200vh
-  //position: fixed
-  //top: 50%
-  //left: 50%
-  //transform-origin: center center
-  //transform: translate(-50%, -50%)
+  outline: 1px solid azure
+  height: 300px
+  width: 1000px
+  background: azure
+  margin: 0 auto
 
-
+.title-block
+  z-index: 15
 .scroll-block__inner
-  //opacity: 0
   width: 300px
   height: 200px
 .scroll-block__image
@@ -261,7 +196,7 @@ onMounted(() => {
   position: relative
   //height: calc(100vh - 100px)
   width: 100%
-  height: 300vh
+  height: 100vh
   overflow: hidden
 
 .img
@@ -271,7 +206,6 @@ onMounted(() => {
 
 .img_parallax
   padding: 50px
-//transition: 1.35s all
 .title-block
   position: fixed
   top: 50%
@@ -346,14 +280,6 @@ onMounted(() => {
   left: 5%
   width: 100px
   height: 100px
-
-
-
-
-
-
-
-
 
 .sticky-container
   align-items: flex-start
