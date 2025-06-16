@@ -29,43 +29,43 @@ onMounted(() => {
       <div class="animation title-block">
         <p class="title title_first">awesome Journey</p>
         <img alt=""
-             class="square img img_first" src="~/assets/main/variantOne/alien.png">
+             class="square img img_first" src="~/assets/main/cosmos/alien.png">
       </div>
     </div>
 
     <div class="title-block title-block_second">
       <div class="animation title-block">
-        <img alt="" class="img img_second" src="~/assets/main/variantOne/comet.png">
+        <img alt="" class="img img_second" src="~/assets/main/cosmos/comet.png">
         <p class="title title_second_one">Through</p>
-        <img alt="" class="img img_third" src="~/assets/main/variantOne/moon.png">
-        <img alt="" class="img img_fourth" src="~/assets/main/variantOne/nebula.png">
+        <img alt="" class="img img_third" src="~/assets/main/cosmos/moon.png">
+        <img alt="" class="img img_fourth" src="~/assets/main/cosmos/nebula.png">
         <p class="title title_second_two">Space</p>
       </div>
     </div>
     <div class="title-block title-block_third">
       <div class="animation title-block">
         <p class="title title_third">Beyond Insights</p>
-        <img alt="" class="img img_fifth" src="~/assets/main/variantOne/planet.png">
+        <img alt="" class="img img_fifth" src="~/assets/main/cosmos/planet.png">
       </div>
     </div>
   </section>
 
-<!--  <section class="main">-->
-<!--    <div class="title-block title-block_first">-->
-<!--      <p class="title title_first">awesome Journey</p>-->
-<!--      <img alt=""-->
-<!--           class="img img_first" src="~/assets/main/variantOne/alien.png"></div>-->
-<!--    <div class="title-block title-block_second">-->
-<!--      <img alt="" class="img img_second" src="~/assets/main/variantOne/comet.png">-->
-<!--      <p class="title title_second_one">Through</p>-->
-<!--      <img alt="" class="img img_third" src="~/assets/main/variantOne/moon.png">-->
-<!--      <img alt="" class="img img_fourth" src="~/assets/main/variantOne/nebula.png">-->
-<!--      <p class="title title_second_two">Space</p></div>-->
-<!--    <div class="title-block title-block_third">-->
-<!--      <p class="title title_third">Beyond Insights</p>-->
-<!--      <img alt="" class="img img_fifth" src="~/assets/main/variantOne/planet.png">-->
-<!--    </div>-->
-<!--  </section>-->
+  <!--  <section class="main">-->
+  <!--    <div class="title-block title-block_first">-->
+  <!--      <p class="title title_first">awesome Journey</p>-->
+  <!--      <img alt=""-->
+  <!--           class="img img_first" src="~/assets/main/cosmos/alien.png"></div>-->
+  <!--    <div class="title-block title-block_second">-->
+  <!--      <img alt="" class="img img_second" src="~/assets/main/cosmos/comet.png">-->
+  <!--      <p class="title title_second_one">Through</p>-->
+  <!--      <img alt="" class="img img_third" src="~/assets/main/cosmos/moon.png">-->
+  <!--      <img alt="" class="img img_fourth" src="~/assets/main/cosmos/nebula.png">-->
+  <!--      <p class="title title_second_two">Space</p></div>-->
+  <!--    <div class="title-block title-block_third">-->
+  <!--      <p class="title title_third">Beyond Insights</p>-->
+  <!--      <img alt="" class="img img_fifth" src="~/assets/main/cosmos/planet.png">-->
+  <!--    </div>-->
+  <!--  </section>-->
 
   <section class="long">
     Very long block about space, time, stars and cosmos ship...
@@ -74,6 +74,8 @@ onMounted(() => {
 </template>
 
 <style lang="sass" scoped>
+@import "/const/color"
+@import "/const/color"
 
 .long
   position: relative
@@ -102,7 +104,7 @@ onMounted(() => {
   line-height: 130px
   text-transform: uppercase
   font-weight: 600
-  color: #e6e6e6
+  color: $white
 
 
 .title_first

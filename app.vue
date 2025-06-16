@@ -44,6 +44,7 @@ onUnmounted(() => {
         rel="stylesheet">
   </head>
   <div class="page">
+    <div class="center"></div>
     <NuxtLink v-if="route.fullPath !== '/'" class="back-button custom-button"
               to="https://anastasiy-alt.github.io/animation-nuxt">Go back
     </NuxtLink>
@@ -56,6 +57,7 @@ onUnmounted(() => {
 </template>
 
 <style lang="sass">
+@import "/const/color"
 *
   font-family: "Electrolize", sans-serif
   font-style: normal
@@ -65,16 +67,26 @@ onUnmounted(() => {
 h1, h2
   text-align: center
   margin: 50px auto
-  color: #e6e6e6
+  color: $white
 
 p
-  color: #e6e6e6
+  color: $white
 
 .page
-  margin: 50px 100px
 
+  margin: 50px 100px
+//.center
+//  position: fixed
+//  top: 50%
+//  left: 50%
+//  transform: translate(-50%, -50%)
+//  width: 20px
+//  height: 20px
+//  background: yellow
+//  z-index: 100
 body
   background-color: #252423
+  overflow-x: hidden
 
 .custom-button:visited
   text-decoration: none !important
@@ -83,8 +95,8 @@ body
 .custom-button
   text-decoration: none !important
   color: black !important
-  background: #e6e6e6
-  border: 5px solid #6aff65
+  background: $white
+  border: 5px solid $light-green
   border-radius: 100px
   padding: 10px 20px
   cursor: pointer
@@ -112,5 +124,14 @@ body
   opacity: 1
   visibility: visible
 
+.link
+  font-size: 24px
+  color: $grey
+  transition: .35s all
 
+.link:hover
+  color: $white
+
+.link:visited
+  color: $light-green
 </style>
