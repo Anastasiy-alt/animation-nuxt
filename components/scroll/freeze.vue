@@ -76,8 +76,6 @@ section
   align-items: center
   width: 100%
   min-height: 100vh
-  border-top: 1px dotted var(--red)
-  border-bottom: 1px dotted var(--red)
 
 section.spacer
   min-height: 50vh

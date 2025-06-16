@@ -1,8 +1,10 @@
 <script setup>
 
+import Main from "~/pages/main.vue";
 </script>
 
 <template>
+<!--  <MainTest />-->
   <h1>
     This pet-project about usage Anime.js lib with Nuxt.js
   </h1>
@@ -28,7 +30,7 @@
 </template>
 
 <style lang="sass">
-
+@import "/const/color"
 
 li::marker
   content: "🌝 "
@@ -36,14 +38,5 @@ li::marker
 li:nth-child(2n)::marker
   content: "🌚 "
 
-.link
-  font-size: 24px
-  color: #9b9797
-  transition: .35s all
 
-.link:hover
-  color: #e6e6e6
-
-.link:visited
-  color: #6aff65
 </style>
