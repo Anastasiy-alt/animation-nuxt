@@ -57,7 +57,7 @@ onUnmounted(() => {
 </template>
 
 <style lang="sass">
-@import "/const/color"
+@use "/const/color"
 *
   font-family: "Electrolize", sans-serif
   font-style: normal
@@ -67,10 +67,10 @@ onUnmounted(() => {
 h1, h2
   text-align: center
   margin: 50px auto
-  color: $white
+  color: color.$white
 
 p
-  color: $white
+  color: color.$white
 
 .page
 
@@ -95,8 +95,8 @@ body
 .custom-button
   text-decoration: none !important
   color: black !important
-  background: $white
-  border: 5px solid $light-green
+  background: color.$white
+  border: 5px solid color.$light-green
   border-radius: 100px
   padding: 10px 20px
   cursor: pointer
@@ -126,12 +126,12 @@ body
 
 .link
   font-size: 24px
-  color: $grey
+  color: color.$grey
   transition: .35s all
 
 .link:hover
-  color: $white
+  color: color.$white
 
 .link:visited
-  color: $light-green
+  color: color.$light-green
 </style>
