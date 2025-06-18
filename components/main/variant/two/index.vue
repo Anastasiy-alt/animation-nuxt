@@ -226,7 +226,7 @@ onMounted(() => {
   });
   animate('.corner_first .corner__inner', {
     duration: 500,
-    x: '-20vw',
+    x: '-30vw',
     alternate: true,
     ease: 'inOutQuad',
     autoplay: onScroll({
@@ -238,7 +238,7 @@ onMounted(() => {
   });
   animate('.corner_third .corner__inner', {
     duration: 500,
-    x: '-30vw',
+    x: '-20vw',
     alternate: true,
     ease: 'inOutQuad',
     autoplay: onScroll({
@@ -384,16 +384,9 @@ onMounted(() => {
       <div class="corner__block">
         <div class="corner__text-block">
           <div class="corner__inner">
-            <span class="corner__text">t</span>
-            <span class="corner__text">h</span>
-            <span class="corner__text">e</span>
-            <span class="corner__text">&nbsp;</span>
-            <span class="corner__text">m</span>
-            <span class="corner__text">a</span>
-            <span class="corner__text">s</span>
-            <span class="corner__text">t</span>
-            <span class="corner__text">e</span>
-            <span class="corner__text">r</span>
+            <span class="corner__text">o</span>
+            <span class="corner__text">o</span>
+            <span class="corner__text">d</span>
           </div>
         </div>
       </div>
@@ -414,20 +407,27 @@ onMounted(() => {
       <div class="corner__block">
         <div class="corner__text-block">
           <div class="corner__inner">
-            <span class="corner__text">o</span>
-            <span class="corner__text">o</span>
-            <span class="corner__text">d</span>
+            <span class="corner__text">t</span>
+            <span class="corner__text">h</span>
+            <span class="corner__text">e</span>
+            <span class="corner__text">&nbsp;</span>
+            <span class="corner__text">m</span>
+            <span class="corner__text">a</span>
+            <span class="corner__text">s</span>
+            <span class="corner__text">t</span>
+            <span class="corner__text">e</span>
+            <span class="corner__text">r</span>
           </div>
         </div>
       </div>
     </div>
   </section>
-<!--  <MainVariantTwoRound />-->
+  <MainVariantTwoRound />
   <NuxtLink target="_blank" class="link" to="https://telescope.fyi/">Reference</NuxtLink>
 </template>
 
 <style lang="sass" scoped>
-@import "/const/color"
+@use "/const/color"
 
 .corner::before
   z-index: 0
@@ -439,10 +439,10 @@ onMounted(() => {
   left: 50%
   transform: translate(-50%, 0)
   clip-path: polygon(0 300px, 100% 0, 100% 100%, 0 100%)
-  background: $light-yellow
+  background: color.$light-yellow
 
 .corner:nth-child(2n)::before
-  background: $white
+  background: color.$white
   clip-path: polygon(0 0, 100% 200px, 100% 100%, 0 100%)
 
 .corner:last-child::before
@@ -487,7 +487,7 @@ onMounted(() => {
   display: flex
   flex-direction: column
   gap: 10px
-  border-bottom: 2px solid $grey
+  border-bottom: 2px solid color.$grey
 
 .inner__title
   white-space: nowrap
@@ -558,8 +558,8 @@ onMounted(() => {
   width: 100%
   height: fit-content
   max-height: 80vh
-  background: $white
-  outline: 5px solid $grey
+  background: color.$white
+  outline: 5px solid color.$grey
   padding: 30px
   box-sizing: border-box
   display: flex
@@ -605,11 +605,11 @@ onMounted(() => {
   font-size: 50px
   margin: 0
   text-align: center
-  color: $white
+  color: color.$white
   font-weight: bold
 
 .title_sub
-  color: $grey
+  color: color.$grey
   font-size: 20px
   width: 100%
   text-align: center

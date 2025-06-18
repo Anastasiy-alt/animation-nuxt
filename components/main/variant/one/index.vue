@@ -74,8 +74,7 @@ onMounted(() => {
 </template>
 
 <style lang="sass" scoped>
-@import "/const/color"
-@import "/const/color"
+@use "/const/color"
 
 .long
   position: relative
@@ -104,7 +103,7 @@ onMounted(() => {
   line-height: 130px
   text-transform: uppercase
   font-weight: 600
-  color: $white
+  color: color.$white
 
 
 .title_first

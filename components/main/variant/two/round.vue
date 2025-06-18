@@ -1,14 +1,7 @@
 <script setup>
-import {createTimeline, onScroll, stagger, utils} from 'animejs'
+import {animate, createTimeline, onScroll, stagger, utils} from 'animejs'
 
 onMounted(() => {
-  utils.set('.card', {
-    rotate: () => utils.random(-1, 1, 2),
-    rotateZ: () => utils.random(-1, 1, 2),
-    y: stagger(-.5, {from: 'first'}),
-    z: stagger(1),
-  });
-
   createTimeline({
     defaults: {
       ease: 'linear',
@@ -29,7 +22,7 @@ onMounted(() => {
       .add('.card', {
         rotate: 0,
         rotateZ: {to: stagger([0, -300], {from: 'first'}), ease: 'inOut(2)'},
-        y: {to: '-100%', duration: 400},
+        y: {to: '-150%', duration: 400},
         delay: stagger(1, {from: 'first'}),
       }, 0)
       .init()
@@ -50,7 +43,6 @@ onMounted(() => {
       </div>
     </div>
   </section>
-
 </template>
 
 <style lang="sass" scoped>
@@ -76,11 +68,6 @@ section
   border-top: 1px dotted var(--red)
   border-bottom: 1px dotted var(--red)
 
-h2
-  font-family: ui-monospace, monospace
-  font-size: min(5vw, 24px)
-  max-width: 1000px
-
 .section-content
   display: flex
   width: 100%
@@ -88,11 +75,9 @@ h2
   justify-content: center
 
 .stack
-  --w: 22.5vh
-  --h: 30vh
   position: relative
-  width: calc(var(--w) * 1)
-  height: calc(var(--h) * 1)
+  width: 150px
+  height: 150px
 
 .card
   position: absolute
